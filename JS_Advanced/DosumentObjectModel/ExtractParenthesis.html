@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function extractText(id) {
+        let arr = []
+        let text = document.getElementById(id).textContent
+        let regex = /\((.+?)\)/g
+
+        while (match = regex.exec(text)){
+            arr.push(match[1])
+        }
+
+        return arr.join('; ')
+
+    }
+</script>
+</body>
+</html>
