@@ -39,6 +39,7 @@
     let stopId = 'depot';
     let url = 'https://judgetests.firebaseio.com/schedule/';
 
+    let currentStop;
     let departBtn = $('#depart');
     let arriveBtn = $('#arrive');
 
@@ -55,13 +56,15 @@
       departBtn.attr('disabled', true);
       arriveBtn.attr('disabled', false);
 
-      $('#info > span').text(res.name);
+      $('#info > span').text('Next stop ' + res.name);
       stopId = res.next;
+      currentStop = res.name;
     }
 
     function arrive () {
       departBtn.attr('disabled', false);
       arriveBtn.attr('disabled', true);
+      $('#info > span').text('Arriving at ' + currentStop);
     }
 
     return {
