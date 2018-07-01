@@ -1,0 +1,10 @@
+{{> header}}
+<section id="viewMyFlights">
+    <h3>Your Flights</h3>
+    {{#each flights}}
+        {{> myFlight}}
+    {{else}}
+        <p>NO FLIGHTS TO SHOW</p>
+    {{/each}}
+</section>
+{{> footer}}
